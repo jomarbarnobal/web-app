@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/materialize-css/dist/css/materialize.css";
+
+app-root{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+footer{
+  background: rgb(218, 51, 48) !important ;
+}    
+    

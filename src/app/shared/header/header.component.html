@@ -1,0 +1,37 @@
+<nav>
+  <div class="nav-wrapper container">
+    <a href="#" class="brand-logo">{{ title }}</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li id="search">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input placeholder="search....."type="text" id="autocomplete-input" materialize="autocomplete">
+        </div>
+      </li>
+      <!--<li *ngIf="_tokenService.currentUserData != null">
+        <a href="#"> {{ _tokenService.currentUserData?.email }}</a> 
+      </li> -->
+      <li> 
+        <!-- Dropdown Trigger -->
+        <a materialize="dropdown" class='dropdown-button' href='#' data-activates='dropdown1'>Drop Me!</a>
+        <!-- Dropdown Structure -->
+           <ul id='dropdown1' class='dropdown-content'>
+              <li><a>one</a></li>
+              <li><a>two</a></li>
+              <li class="divider"></li>
+              <li><a>log out</a></li>
+            </ul>
+      </li>
+      <li> <a hre="#">Login</a></li>      
+    </ul>
+
+    <!-- side nav -->
+    <side-navigation></side-navigation>
+
+    <!-- sidebar menu toggle -->
+    <a href="#" materialize="sideNav" [materializeParams]="[{edge:'left'}]" data-activates="slide-out"
+      class="button-collapse">
+      <i class="material-icons">menu</i>
+    </a>
+   </div>
+</nav>
