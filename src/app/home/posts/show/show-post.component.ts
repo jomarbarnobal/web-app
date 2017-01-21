@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router'
 import { PostService } from '../../../services';
-import { Observable } from 'rxjs/Rx'
-// import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   templateUrl: './show-post.component.html',
@@ -10,6 +9,7 @@ import { Observable } from 'rxjs/Rx'
 
 export class SinglePostComponent implements OnInit{
   post = []
+  comment = []
   id: number;
   private sub: any;
   constructor(
@@ -25,6 +25,7 @@ export class SinglePostComponent implements OnInit{
     this._postService.getPost(this.id)
       .subscribe(
         post => this.post = post,
+        comment => this.comment = comment
     )
   }
 }

@@ -3,7 +3,9 @@
   
   <div class="card-content white-text">
     <span class="card-title">{{ post.title }} | id# {{ post.id }}</span>
-    <p> {{ post.body }}</p>
+    <p> body:  {{ post.body }}</p>
+    <p> postedby: {{ post.user.name }}</p>
+    <p> postedby: {{ post.comments.body }}</p>
   </div>
 
   <div class="card-action">

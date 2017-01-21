@@ -11,12 +11,9 @@ export class PostService {
     private _postService: ApiService
   ){}
 
-  getAllPosts(){
-    return this._postService.get(this.path)
+  getAllPosts(id: number, comments: string){
+    return this._postService.get(`${this.path}/${id}/${'comments'}/${id}`)
   }
-  
-  getPost(id: number){
-    return this._postService.get(`${this.path}/${id}`)
-  }
+ 
 
 }
