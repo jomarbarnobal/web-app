@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'page-header',
@@ -6,4 +6,6 @@ import { Component, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {}
+export class HeaderComponent {
+  title = 'Angular2'
+}

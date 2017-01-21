@@ -1,15 +1,18 @@
-<div class="card blue-grey darken-1" 
+<div class="card" 
      *ngFor="let post of posts | async">
-  
-  <div class="card-content white-text">
-    <span class="card-title">{{ post.title }} | id# {{ post.id }}</span>
-    <p> body:  {{ post.body }}</p>
+  <div class="card-content light">
     <p> postedby: {{ post.user.name }}</p>
-    <p> postedby: {{ post.comments.body }}</p>
+    <span class="card-title">
+       <a class="grey-text text-darken-3" routerLink="/post/{{ post.id}}"> {{ post.title }}</a> 
+     </span>
+    <p>{{ post.body }}</p>
   </div>
 
   <div class="card-action">
-    <a routerLink="/home">This is a link</a>
-    <a routerLink="/post/{{post.id}}">{{ post.title }}</a>
+    <p class="right comments-counts" *ngIf="post.comments.length > 1">
+        <i class="lnr lnr-bubble red-text"></i>  
+        <span>{{ post.comments.length}} comments </span>
+    </p>
+    <p><a routerLink="/post/{{post.id}}">{{ post.title }}</a></p>
   </div>
 </div>

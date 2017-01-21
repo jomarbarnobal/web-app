@@ -1,6 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/materialize-css/dist/css/materialize.css";
 
+body {
+  background: #fafafa;
+  color: rgba(66, 66, 66, 0.83);
+} 
+
+// Mixin itself
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
 app-root{
   display: flex;
   min-height: 100vh;
