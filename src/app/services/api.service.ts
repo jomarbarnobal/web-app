@@ -33,7 +33,7 @@ export class ApiService {
     }
   }
 
-  // GET all post
+  // Posts API path
   get(path: string): Observable<any>{
     return this._http.get(`${this._postsUrl}${path}`, this._headers)
       .map(this.chechForError)

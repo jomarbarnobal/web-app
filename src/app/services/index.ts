@@ -1,2 +1,2 @@
-export * from './api.service';
-export * from './post.service'
+export { ApiService } from './api.service';
+export { PostService } from './post.service'
