@@ -3,10 +3,18 @@
   <span class="light"> {{ post?.user?.email}}</span><br>
   <span>{{ post.created_at }} </span>
   <p class="flow-text">{{ post.body }} </p>
-  
+
+  <div class="comments-wrapper">
+  <comment-section></comment-section>
+  </div>
 
   <div *ngFor="let comment of post.comments; let i= index">
+    <div class="card panel">
      <p>{{comment.body}}</p>
+     <p>{{comment.user?.email}}</p>
+    </div>
   </div>
   <a routerLink="/home">back to home</a>
+  <br>
+  
 </div>

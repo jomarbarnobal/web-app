@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { MaterializeModule } from 'angular2-materialize'
 import { PostsComponent } from './posts'
 import { SinglePostComponent } from './posts/show'
+import { CommentComponent } from './comments';
 
 
 
@@ -20,12 +21,14 @@ import { SinglePostComponent } from './posts/show'
     HomeComponent,
     PostsComponent,
     SinglePostComponent,
+    CommentComponent,
   ],
   exports: [
     BannerComponent,
     HomeComponent,
     PostsComponent,
     SinglePostComponent,
+    CommentComponent
   ]
   
 })
