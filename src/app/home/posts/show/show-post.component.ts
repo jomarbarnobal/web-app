@@ -5,7 +5,7 @@ import { PostService } from '../../../services';
 
 @Component({
   templateUrl: './show-post.component.html',
-  styleUrls: ['./show-post.component.scss']
+  styleUrls: ['./show-post.component.scss'],
 })
 
 export class SinglePostComponent implements OnInit{

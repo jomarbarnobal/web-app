@@ -13,7 +13,7 @@ import { _router } from './routes'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

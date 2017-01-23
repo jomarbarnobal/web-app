@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { } from 'angular2-momment';
 import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
 import { BannerComponent } from './banner';
@@ -9,9 +8,6 @@ import { PostsComponent } from './posts'
 import { SinglePostComponent } from './posts/show'
 import { CommentComponent } from './comments';
 import { MomentModule } from 'angular2-moment/moment.module'
-
-
-
 
 
 @NgModule({
@@ -26,7 +22,8 @@ import { MomentModule } from 'angular2-moment/moment.module'
     HomeComponent,
     PostsComponent,
     SinglePostComponent,
-    CommentComponent
+    CommentComponent,
+
   ],
   exports: [
     BannerComponent,
