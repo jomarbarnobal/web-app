@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router'
+import { ActivatedRoute, Params } from '@angular/router';
 import { PostService } from '../../../services';
+import {ShareButton, ShareProvider} from "ng2-sharebuttons";
 
 
 @Component({
@@ -11,6 +12,8 @@ import { PostService } from '../../../services';
 export class SinglePostComponent implements OnInit{
   post = []
   comments = []
+  facebookButton;
+  description = [];
 
   id: number;
   private sub: any;
@@ -29,6 +32,12 @@ export class SinglePostComponent implements OnInit{
         post => this.post = post,
         comment => this.comments = comment
     )
+
+    this.facebookButton = new ShareButton(
+        ShareProvider.FACEBOOK,              //choose the button from ShareProvider
+        "<img src='../../assets/img/custom/single-twitter.svg'> facebook",    //set button template
+        'facebook'                           //set button classes
+      );
   }
 }
 
