@@ -7,8 +7,9 @@ import { MaterializeModule } from 'angular2-materialize';
 import { HomeModule } from './home';
 import { SharedModule } from './shared'
 import { AppComponent } from './app.component';
-import { PostService, ApiService }from './services'
-import { _router } from './routes'
+import { PostService, ApiService }from './services';
+import { _router } from './routes';
+
 
 
 @NgModule({

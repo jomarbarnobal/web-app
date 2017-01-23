@@ -1,36 +1,47 @@
-<div class="container">
-  <div class="post-inner">
-  <h5>{{ post.title }} </h5>
-  <span class="light"> {{ post?.user?.email}}</span><br>
-  <span>{{ post.created_at | amTimeAgo }} </span>
-  <p class="flow-text">{{ post.body }} </p>
-
-  <div class="comments-wrapper">
-  <div class="card">
-   <comment-section></comment-section>
-  </div>
-  </div>
-
-  <div *ngFor="let comment of post.comments">
-    <div class="comment-card">
-      <div class="comment-profile clearfix">
-        <div class="comment-image">
-          <img id="comment-imgage" src="/assets/images/yuna.jpg" alt="" class="circle"> <!-- notice the "circle" class -->
-        </div>
-        <div class="comment-profiles">
-          <span> {{ comment?.user?.email }}</span>
-          <br>
-          <span> {{ comment.created_at | amTimeAgo}}</span>
+<div class="post-page">
+  <div class="post-wrapper">
+    <div class="post-inner">
+  <!-- post with user profile -->  
+      <div class="post-profile-image">
+        <img id="comment-imgage" src="/assets/images/yuna.jpg" alt="" class="circle">
+      </div>
+      <div class="post-profile">
+        <span class="light"> {{ post?.user?.email}}</span><br>
+        <span class="time light">{{ post.created_at | amTimeAgo }} </span>
+      </div>
+    <!-- post body -->
+      <div class="post-title">
+        <h3 class="grey-text text-darken-4">{{ post.title }} </h3>
+      </div>
+    <!-- comment body -->
+      <div class="post-body">
+        <p class="flow-text">{{ post.body }} </p>
+      </div>
+    </div>
+    <div class="comment-wrapper">
+  <!-- comment form -->
+      <div class="comments-wrapper">
+        <div class="card">
+          <comment-section></comment-section>
         </div>
       </div>
-      
-      <span class="">
-        {{ comment.body}}
-      </span>
+  <!-- itirate all comments here -->
+      <div *ngFor="let comment of post.comments">
+        <div class="comment-card">
+          <div class="comment-profile clearfix">
+            <div class="comment-image">
+              <img id="comment-imgage" src="/assets/images/yuna.jpg" alt="" class="circle">
+            </div>
+            <div class="comment-profiles">
+              <span class="light"> {{ comment?.user?.email }}</span><br>
+              <span class="time light"> {{ comment.created_at | amTimeAgo}}</span>
+            </div>
+          </div>
+          <p class="light">
+            {{ comment.body}}
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <a routerLink="/home">back to home</a>
-  <br>
   </div>
 </div>
