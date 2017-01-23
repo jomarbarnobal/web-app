@@ -24,7 +24,14 @@
          <i class="fa fa-comments-o">
           <span>10</span>
          </i>
-         <share-button [button]='facebookButton' [description]="post.title"></share-button>
+         <share-button class="right" 
+          [button]='facebookButton' 
+          [description]='post.title'
+          ></share-button>
+           <share-button class="right" 
+          [button]='twitterButton' 
+          [description]='post.title'
+          ></share-button>
       </div>
     </div>
   </div>

@@ -19,6 +19,22 @@ body {
   }
 }
 
+button.twitter,
+button.facebook {
+    border: none;
+    background: transparent;
+    span {
+      i.fa-twitter,
+      i.fa-facebook{
+      font-size: 1.5em;
+      color: #bdbdbd;
+      &:hover{
+        color: teal;
+      }
+    }    
+    }
+}
+
 
 app-root{
   display: flex;
