@@ -5,7 +5,9 @@
   <p class="flow-text">{{ post.body }} </p>
 
   <div class="comments-wrapper">
-  <comment-section></comment-section>
+  <div class="card">
+    <comment-section></comment-section>
+  </div>
   </div>
 
   <div *ngFor="let comment of post.comments">
