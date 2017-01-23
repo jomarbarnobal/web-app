@@ -1,15 +1,17 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router'
 import { PostService } from '../../../services';
 
 
 @Component({
   templateUrl: './show-post.component.html',
+  styleUrls: ['./show-post.component.scss']
 })
 
 export class SinglePostComponent implements OnInit{
   post = []
-  comment = []
+  comments = []
+
   id: number;
   private sub: any;
   constructor(
@@ -25,7 +27,7 @@ export class SinglePostComponent implements OnInit{
     this._postService.getPost(this.id)
       .subscribe(
         post => this.post = post,
-        comment => this.comment = comment
+        comment => this.comments = comment
     )
   }
 }

@@ -1,19 +1,32 @@
 <div class="container">
   <h5>{{ post.title }} </h5>
   <span class="light"> {{ post?.user?.email}}</span><br>
-  <span>{{ post.created_at }} </span>
+  <span>{{ post.created_at | amTimeAgo }} </span>
   <p class="flow-text">{{ post.body }} </p>
 
   <div class="comments-wrapper">
   <comment-section></comment-section>
   </div>
 
-  <div *ngFor="let comment of post.comments; let i= index">
-    <div class="card panel">
-     <p>{{comment.body}}</p>
-     <p>{{comment.user?.email}}</p>
-    </div>
+  <div *ngFor="let comment of post.comments">
+       <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s1">
+              <img id="comment-imgage" src="/assets/images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s11">
+              <p> {{ comment?.user?.email }}</p>
+              <p> {{ comment.created_at | amTimeAgo}}</p>
+              <span class="">
+                {{ comment.body}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
+
   <a routerLink="/home">back to home</a>
   <br>
   
