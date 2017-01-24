@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
 import { HomeModule } from './home';
-import { UserModule } from './user'
+// import { UserModule } from './user'
 import { SharedModule } from './shared'
 import { AppComponent } from './app.component';
 import { PostService, ApiService }from './services';
@@ -25,7 +25,7 @@ import { _router } from './routes';
     MaterializeModule,
     ReactiveFormsModule,
     HomeModule,
-    UserModule,
+    // UserModule,
     SharedModule,
     MomentModule,
     _router

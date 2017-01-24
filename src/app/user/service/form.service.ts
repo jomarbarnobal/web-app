@@ -1,12 +1,13 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms'
+import { FormControl, FormGroup } from '@angular/forms';
+import {MaterializeAction} from 'angular2-materialize';
 import { Subject } from 'rxjs/Subject'
 import { FormBase } from './user.model'
 
 @Injectable()
 
 export class FormService {
-
+    public  modalActions = new EventEmitter<string|MaterializeAction>();
     public submit$ = new EventEmitter<any>();
     public submitLock: boolean = false;
     public formGroup: FormGroup;
@@ -27,6 +28,10 @@ export class FormService {
     public unlockSubmit(){
         this.formGroup.reset();
         this.submitLock = false;
+    }
+
+    public closeModal(){
+       this.modalActions.emit({action:"modal",params:['close']});
     }
 
     public _createFormGroup(){

@@ -1,7 +1,16 @@
 <main>
-<page-header></page-header>
+  
+<page-header 
+    *ngIf="_router.url != '/users/sessions/sign-in' "
+    >
+</page-header>
 
 <router-outlet></router-outlet>
 </main>
 
-<footer class="page-footer"></footer>
+<footer 
+  class="page-footer"
+  *ngIf="_router.url != '/users/sessions/sign-in'"
+  >
+
+</footer>

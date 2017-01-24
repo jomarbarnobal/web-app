@@ -22,7 +22,8 @@
               <li><a>log out</a></li>
             </ul>
       </li>
-      <li> <a routerLink="users/sessions/sign-in">Login</a></li>      
+      <li> <a routerLink="users/sessions/sign-in">Login</a></li>    
+      <li><a class="waves-effect waves-light btn modal-trigger" (click)="openModal()">Modal</a></li>  
     </ul>
 
     <!-- side nav -->
@@ -35,3 +36,14 @@
     </a>
    </div>
 </nav>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <sign-in></sign-in>
+  </div>
+  <div class="modal-footer">
+    <a class="waves-effect waves-green btn-flat" (init)="closeModal()">Close</a>
+  </div>
+</div>
+    
