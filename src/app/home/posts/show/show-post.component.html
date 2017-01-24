@@ -3,10 +3,10 @@
     <div class="post-inner">
   <!-- post with user profile -->  
       <div class="post-profile-image">
-        <img id="comment-imgage" src="assets/images/yuna.jpg" alt="" class="circle">
+        <img src="assets/images/yuna.jpg" alt="" class="circle">
       </div>
       <div class="post-profile">
-        <span class="light"> {{ post?.user?.email}}</span><br>
+        <span class="light email-name"> {{ post?.user?.email}}</span><br>
         <span class="time light">{{ post.created_at | amTimeAgo }} </span>
       </div>
     <!-- post body -->
@@ -22,7 +22,9 @@
           <span>10</span>
          </i>
          <i class="fa fa-comments-o">
-          <span>10</span>
+          <span *ngIf="post.comments?.length > 1">
+            {{ post.comments?.length }}
+          </span>
          </i>
          <share-button class="right" 
           [button]='facebookButton' 
@@ -50,7 +52,7 @@
             <img id="comment-imgage" src="assets/images/yuna.jpg" alt="" class="circle">
           </div>
           <div class="comment-profiles">
-            <span class="light"> {{ comment?.user?.email }}</span><br>
+            <span class="email-name light"> {{ comment?.user?.email }}</span><br>
             <span class="time light"> {{ comment.created_at | amTimeAgo}}</span>
           </div>
         </div>

@@ -1,8 +1,15 @@
 <div class="card" 
      *ngFor="let post of posts | async">
   <div class="card-content light">
-    <p> {{ post.user.name }}</p>
-    <p class="grey-text text-lighten-1"> {{ post.created_at | date: 'fullDate' }}</p>
+    <div class="home-post">
+      <div class="home-post-image">
+        <img src="assets/images/yuna.jpg" alt="" class="circle">
+      </div>
+      <div class="home-post-profile">
+        <span class="name-email light"> {{ post.user.name }}</span><br>
+        <span class="time light"> {{ post.created_at | amTimeAgo }}</span>
+      </div>
+    </div>
     <span class="card-title">
        <a class="grey-text text-darken-3" routerLink="/post/{{ post.id}}"> {{ post.title }}</a> 
      </span>
@@ -11,7 +18,7 @@
 
   <div class="card-action">
     <p class="right comments-counts" *ngIf="post.comments.length > 1">
-        <i class="lnr lnr-bubble red-text"></i>  
+        <i class="fa fa-comments-o"></i>  
         <span>{{ post.comments.length}} comments </span>
     </p>
     <p><a routerLink="/post/{{post.id}}">{{ post.title }}</a></p>
