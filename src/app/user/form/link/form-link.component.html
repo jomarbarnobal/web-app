@@ -1,0 +1,5 @@
+<div class="links-wrapper">
+    <p *ngIf="_links.url != '/session/password' "><a [routerLink]="['/session/reset-password']">Forgot Password?</a></p>
+    <p *ngIf="_links.url != '/session/sign-up' "><a [routerLink]="['/session/sign-up']">Sign Up</a></p>
+    <p *ngIf="_links.url != '/session/sign-in' "><a [routerLink]="['/session/sign-in']">Sign In</a></p>
+</div>
