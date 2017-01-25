@@ -9,12 +9,11 @@
         [form]="_formService.formGroup">
     </user-form-field>
   </div>
-    <div class="row">
-    <div class="input-field col s12">  
-      <button class="col s12 btn waves-effect waves-light btn-large" type="submit" [disabled]="!_formService.formGroup.valid || _formService.formGroup.pristine || _formService.submitLock">
-          <ng-content *ngIf="!_formService.submitLock"></ng-content>
-          <span *ngIf="_formService.submitLock">Submitting ...</span>
-      </button>
-    </div>
-    </div> 
+
+  <div class="input-field col s12">  
+    <button class="col s12 btn waves-effect waves-light btn-large" type="submit" [disabled]="!_formService.formGroup.valid || _formService.formGroup.pristine || _formService.submitLock">
+        <ng-content *ngIf="!_formService.submitLock"></ng-content>
+        <span *ngIf="_formService.submitLock">Submitting ...</span>
+    </button>
+  </div>
 </form>

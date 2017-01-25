@@ -15,6 +15,10 @@ input:-webkit-autofill:active {
     -webkit-transition-delay: 9999s;
 }
 
+.input-field > .btn-large {
+  width: 100%;
+}
+
 // Mixin itself
 .clearfix {
   &:before,
@@ -137,5 +141,12 @@ form
     background: #fff;
     padding: 10px;
 }
+
+footer.page-footer {
+    margin-top: 0 !important; 
+}
+
+
+
 
     

@@ -5,12 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
 import { HomeModule } from './home';
-// import { UserModule } from './user';
+import { UserModule } from './user';
 import { SharedModule } from './shared';
 import { DashBoardModule } from './dashboard';
 import { AppComponent } from './app.component';
 import { PostService, ApiService }from './services';
 import { _router } from './routes';
+// import { ErrorComponent } from './user/form/error'
 
 // Angular2-token
 
@@ -18,6 +19,7 @@ import { _router } from './routes';
 @NgModule({
   declarations: [
     AppComponent,
+    // ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import { _router } from './routes';
     MaterializeModule,
     ReactiveFormsModule,
     HomeModule,
-    // UserModule,
+    UserModule,
     SharedModule,
     MomentModule,
     DashBoardModule,
