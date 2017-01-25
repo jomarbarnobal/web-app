@@ -8,6 +8,9 @@
           <input placeholder="search....."type="text" id="autocomplete-input" materialize="autocomplete">
         </div>
       </li>
+      <li *ngIf="!_tokenService.currentUserData">
+          <a class="modal-trigger" (click)="openModal1()">Login</a>
+      </li>
       <!--<li *ngIf="_tokenService.currentUserData != null">
         <a href="#"> {{ _tokenService.currentUserData?.email }}</a> 
       </li> -->
@@ -26,7 +29,6 @@
               <li (click)="logOut()"><a>log out</a></li>
             </ul>
       </li>
-      <li *ngIf="!_tokenService.currentUserData"> <a routerLink="users/sessions/sign-in">Login</a></li>    
     </ul>
 
     <!-- side nav -->
@@ -39,5 +41,20 @@
     </a>
    </div>
 </nav>
+
+
+<div id="modal1" class="modal" materialize="modal" [materializeParams]="[{dismissible: true}]" [materializeActions]="modalActions1">
+    <div class="modal-content">
+        <h4 class="">Sign In </h4>
+        <error-message [errors]="_errors"></error-message>
+        <user-form>Sign In</user-form>
+          <div class="session-link">
+        </div>
+    </div>
+    <div class="modal-footer">
+      <a class="waves-effect waves-green btn-flat" (click)="closeModal1()">Close</a>
+    </div>
+</div>
+
 
     
