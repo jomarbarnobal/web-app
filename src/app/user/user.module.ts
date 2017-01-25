@@ -9,8 +9,8 @@ import { FormService } from './service';
 import { UserComponent } from './user.component';
 import { LoginComponent } from './log-in';
 import { SignUpComponent } from './sign-up';
-// import { ErrorComponent } from './form/error'
-// import { FormComponent } from './form';
+import { ErrorComponent } from './form/error'
+import { FormComponent } from './form';
 import { FormFieldComponent} from './form/form-field';
 import { FormLinkComponent } from './form/link';
 
@@ -26,8 +26,8 @@ import { FormLinkComponent } from './form/link';
     LoginComponent,
     SignUpComponent,
     UserComponent,
-    // ErrorComponent,
-    // FormComponent,
+    ErrorComponent,
+    FormComponent,
     FormFieldComponent,
     FormLinkComponent
   ],
@@ -36,8 +36,8 @@ import { FormLinkComponent } from './form/link';
     LoginComponent,
     SignUpComponent,
     UserComponent,
-    // ErrorComponent,
-    // FormComponent,
+    ErrorComponent,
+    FormComponent,
     FormFieldComponent,
     FormLinkComponent
    ],
