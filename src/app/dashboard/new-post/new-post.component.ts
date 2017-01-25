@@ -1,12 +1,12 @@
-import { 
+import {
   Component,
   OnDestroy,
   AfterViewInit,
   EventEmitter,
   Input,
   Output
-     } from '@angular/core';
-import 'tinymce/themes/inlite';
+} from '@angular/core';
+
 
 declare var tinymce: any;
 
@@ -15,8 +15,8 @@ declare var tinymce: any;
     templateUrl: './new-post.component.html'  
 })
 
-export class NewPostComponent implements AfterViewInit, OnDestroy {
 
+export class NewPostComponent implements AfterViewInit, OnDestroy {
   @Input() elementId: String;
   @Output() onEditorKeyup = new EventEmitter<any>();
 
@@ -27,9 +27,7 @@ export class NewPostComponent implements AfterViewInit, OnDestroy {
       selector: '#' + this.elementId,
       plugins: ['link', 'paste', 'table'],
       skin_url: 'assets/skins/lightgray',
-      theme: 'inlite',
-      inline: true,
-      selection_toolbar: 'bold italic | quicklink h2 h3 blockquote',
+      height: '500',
       setup: editor => {
         this.editor = editor;
         editor.on('keyup', () => {

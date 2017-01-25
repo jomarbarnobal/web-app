@@ -3,6 +3,7 @@ import { Angular2TokenService } from 'angular2-token'
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'page-header',
   templateUrl: './header.component.html',
@@ -13,7 +14,10 @@ export class HeaderComponent {
 
   title = 'Angular2'
 
-  constructor(private _tokenService: Angular2TokenService){
+  constructor(
+    private _tokenService: Angular2TokenService,
+    private _router: Router
+    ){
     this._tokenService.init({
       apiBase: 'https://blog-api-app.herokuapp.com',
     })
@@ -21,9 +25,10 @@ export class HeaderComponent {
 
   logOut(){
     this._tokenService.signOut()
-      .subscribe(
-        res => console.log(res),
-        error => console.log(error)
-      )
+    this._successLogout()  
+  }
+
+  private _successLogout(){
+    this._router.navigate(['']);
   }
 }
