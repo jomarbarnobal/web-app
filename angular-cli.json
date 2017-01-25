@@ -22,7 +22,12 @@
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/materialize-css/dist/js/materialize.js"
+        "../node_modules/materialize-css/dist/js/materialize.js",
+        "../node_modules/tinymce/tinymce.js",
+        "../node_modules/tinymce/themes/inlite/theme.js",
+        "../node_modules/tinymce/plugins/link/plugin.js",
+        "../node_modules/tinymce/plugins/paste/plugin.js",
+        "../node_modules/tinymce/plugins/table/plugin.js"
       ],
       "environments": {
         "source": "environments/environment.ts",
