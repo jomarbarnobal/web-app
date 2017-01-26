@@ -1,0 +1,51 @@
+<div class="ui-userform-field"
+    [formGroup]="form">
+
+    <label
+        [attr.for]="question.key"
+        [style.color]="labelColor"
+        *ngIf="_control.pristine">
+         {{question.label}}
+    </label>
+
+    <label class="user-form-error"
+        [attr.for]="question.key"
+        *ngIf="_control.hasError('required') && !_control.pristine">
+        {{question.label}} is required
+    </label>
+
+    <label class="user-form-error"
+        [attr.for]="question.key"
+        *ngIf="_control.hasError('minlength')">
+        {{question.label}} is too short
+    </label>
+
+    <label class="user-form-error"
+        [attr.for]="question.key"
+        *ngIf="_control.hasError('invalidEmail')">
+        {{question.label}} is not valid format
+    </label>
+
+    <label class="user-form-error"
+        [attr.for]="question.key"
+        *ngIf="_control.hasError('mismatchedPasswords')">
+        {{question.label}} do not match
+    </label>
+
+    <label class="user-form-error"
+        [attr.for]="question.key"
+        *ngIf="_control.hasError('maxlength')">
+        {{question.label}} is too long
+    </label>
+
+    <label class="user-form-valid"
+        [attr.for]="question.key"
+        *ngIf="_control.valid && !_control.pristine">
+        {{question.label}}
+    </label>
+
+    <input
+        [formControlName]="question.key"
+        [id]="question.key"
+        [type]="question.type">
+</div>
