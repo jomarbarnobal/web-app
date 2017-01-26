@@ -1,16 +1,6 @@
 <main>
-  
-<page-header 
-    *ngIf="_router.url != '/users/sessions/sign-in' 
-    && _router.url != '/users/sessions/sign-up' ">
-</page-header>
-
+<header-page></header-page>  
 <router-outlet></router-outlet>
 </main>
 
-<footer 
-  class="page-footer"
-  *ngIf="_router.url != '/users/sessions/sign-in'
-  && _router.url != '/users/sessions/sign-up'
-  ">
-</footer>
+<footer-page></footer-page>

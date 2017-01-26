@@ -1,43 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MomentModule } from 'angular2-moment/moment.module'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
-import { HomeModule } from './home';
-import { UserModule } from './user';
-import { SharedModule } from './shared';
-import { DashBoardModule } from './dashboard';
-import { AppComponent } from './app.component';
-import { PostService, ApiService }from './services';
+import { AppComponent } from './app.component'
 import { _router } from './routes';
-// import { ErrorComponent } from './user/form/error'
-
-// Angular2-token
-
+// import custom module here
+import { HomeModule } from './home';
+// Header component
+import { HeaderComponent } from './header';
+import { SideNavComponent } from './header/sidenav';
+// Footer component
+import { FooterComponent } from './footer'
 
 @NgModule({
   declarations: [
     AppComponent,
-    // ErrorComponent
+    HeaderComponent,
+    SideNavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
-    ReactiveFormsModule,
     HomeModule,
-    UserModule,
-    SharedModule,
-    MomentModule,
-    DashBoardModule,
     _router
   ],
   providers: [ 
-    ApiService, 
-    PostService,
     ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

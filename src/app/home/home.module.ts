@@ -1,39 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { BannerComponent } from './banner';
-import { HomeComponent } from './home.component';
-import { MaterializeModule } from 'angular2-materialize'
-import { PostsComponent } from './posts';
-import { SinglePostComponent } from './posts/show';
-import { CommentComponent } from './comments';
-import { MomentModule } from 'angular2-moment/moment.module';
-import {ShareButtonsModule} from "ng2-sharebuttons";
-
+// home +/+/ component
+// import home component ang thier child component
+import { HomeComponent } from './home.component'
 @NgModule({
-  imports: [
-    MaterializeModule,
-    CommonModule,
-    RouterModule,
-    MomentModule,
-    ShareButtonsModule
-  ],
-  declarations: [
-    BannerComponent,
-    HomeComponent,
-    PostsComponent,
-    SinglePostComponent,
-    CommentComponent,
-
-  ],
-  exports: [
-    BannerComponent,
-    HomeComponent,
-    PostsComponent,
-    SinglePostComponent,
-    CommentComponent
-  ]
-  
+    imports: [],
+    declarations:[
+        HomeComponent
+    ],
+    exports: [
+        HomeComponent
+    ]
 })
 
 export class HomeModule {}
