@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
+import { MaterializeModule } from 'angular2-materialize';
 // home +/+/ component
 // import home component ang thier child component
 import { HomeComponent } from './home.component'
+import { BannerComponent } from './banner'
 @NgModule({
-    imports: [],
+    imports: [
+        MaterializeModule
+    ],
     declarations:[
-        HomeComponent
+        HomeComponent,
+        BannerComponent,
     ],
     exports: [
-        HomeComponent
+        HomeComponent,
+        BannerComponent
     ]
 })
 
