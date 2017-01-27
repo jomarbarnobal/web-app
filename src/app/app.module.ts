@@ -17,6 +17,7 @@ import { SideNavComponent } from './header/sidenav';
 import { FooterComponent } from './footer'
 // User Compnent
 import { LoginComponent } from './user-login'
+import { RegisterComponent } from './user-register'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginComponent } from './user-login'
     HeaderComponent,
     SideNavComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
