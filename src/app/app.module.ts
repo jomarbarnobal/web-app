@@ -10,6 +10,7 @@ import { _router } from './routes';
 // import custom module here
 import { HomeModule } from './home';
 import { FormModule} from './form'
+import { DashBoardModule } from './dashboard'
 // Header component
 import { HeaderComponent } from './header';
 import { SideNavComponent } from './header/sidenav';
@@ -26,7 +27,7 @@ import { RegisterComponent } from './user-register'
     SideNavComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +35,7 @@ import { RegisterComponent } from './user-register'
     FormModule,
     HttpModule,
     MaterializeModule,
+    DashBoardModule,
     HomeModule,
     _router
   ],

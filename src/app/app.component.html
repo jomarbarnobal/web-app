@@ -1,6 +1,6 @@
 <main>
-<header-page></header-page>  
+<header-page *ngIf="!_router.url.includes(['dashboard'])"></header-page>  
 <router-outlet></router-outlet>
 </main>
 
-<footer-page></footer-page>
+<footer-page *ngIf="!_router.url.includes(['dashboard'])"></footer-page>

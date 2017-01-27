@@ -19,7 +19,7 @@
         </a>
         <ul id='dropdown1' class='dropdown-content'>
             <li><a href="#!">Profile</a></li>
-            <li><a href="">dashboard</a></li>
+            <li><a routerLink="/dashboard/user/{{ _tokenService.currentUserData?.id}}">dashboard</a></li>
             <li class="divider"></li>
             <li (click)="logOut()"><a>log out</a></li>
         </ul>

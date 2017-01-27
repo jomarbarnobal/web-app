@@ -1,0 +1,20 @@
+header, .dashboard-container {
+  padding-left: 300px;
+}
+
+nav{
+  .nav-wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+.dashboard-container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 992px){
+  header,footer, .dashboard-container {
+      padding-left: 0;
+  }
+}
