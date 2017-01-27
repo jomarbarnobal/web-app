@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input, Output} from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
 import { Router } from '@angular/router';
 
@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
-
+export class HeaderComponent{
     constructor(
         private _router: Router,
         private _tokenService: Angular2TokenService){
@@ -26,6 +25,5 @@ export class HeaderComponent {
     private _successLogout(){
         this._router.navigate(['/'])    
     }
-
 
 }

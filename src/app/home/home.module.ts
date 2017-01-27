@@ -9,6 +9,8 @@ import { BrowserModule } from '@angular/platform-browser'
 import { HomeComponent } from './home.component';
 import { BannerComponent } from './banner';
 import { PostsComponent } from './posts';
+import { ShowPostComponent } from './show-post'; 
+import { CommentComponent } from './comment'
 
 @NgModule({
     imports: [
@@ -21,12 +23,16 @@ import { PostsComponent } from './posts';
     declarations:[
         HomeComponent,
         BannerComponent,
-        PostsComponent
+        PostsComponent,
+        ShowPostComponent,
+        CommentComponent
     ],
     exports: [
         HomeComponent,
         BannerComponent,
-        PostsComponent
+        PostsComponent,
+        ShowPostComponent,
+        CommentComponent
     ]
 })
 

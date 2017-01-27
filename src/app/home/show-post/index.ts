@@ -1,0 +1,1 @@
+export { ShowPostComponent } from './show.component';
