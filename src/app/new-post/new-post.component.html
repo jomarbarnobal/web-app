@@ -1,0 +1,43 @@
+<div class="container">
+  {{ user_id }}
+  <h1>Create New Post</h1>
+  <form #form="ngForm" 
+    class="col s12" 
+    novalidate 
+    (submit)="submitPost(form.user_id)">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="title" 
+          type="text" 
+          class="validate"
+          required
+          name="title" 
+          [(ngModel)]="_postData.title">
+        <label for="title" data-error="wrong" data-success="right">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea1" 
+          class="materialize-textarea" 
+          required
+          name="body" 
+          [(ngModel)]="_postData.body">
+        </textarea>
+        <label for="textarea1">Post</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <button  [disabled]="form.invalid" class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+  </form>
+  Model: {{ _postData | json }}
+  <br>
+  Angular: {{ form.value | json}}
+  {{ form.pristine}}
+</div>

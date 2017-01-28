@@ -12,6 +12,7 @@ export class ApiService{
   })
 
   private _baseUrl: string = 'https://blog-api-app.herokuapp.com'
+  // private _baseUrl: string = 'http://localhost:3000'
   
   constructor(private _http: Http){}
   
@@ -31,6 +32,21 @@ export class ApiService{
 
   get(path: string): Observable<any>{
     return this._http.get(`${this._baseUrl}${path}`, this._header)
+      .map(this._checkForError)
+      .catch(err => Observable.throw(err))
+      .map(this.getJson)
+  }
+
+  post(path, body): Observable<any>{
+    return this._http.post(`${this._baseUrl}${path}`,
+       JSON.stringify(body), { headers: this._header})
+      .map(this._checkForError)
+      .catch(err => Observable.throw(err))
+      .map(this.getJson)
+  }
+
+   delete(path: string): Observable<any>{
+    return this._http.delete(`${this._baseUrl}${path}`, this._header)
       .map(this._checkForError)
       .catch(err => Observable.throw(err))
       .map(this.getJson)

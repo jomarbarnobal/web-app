@@ -1,0 +1,1 @@
+export { NewPostComponent } from './new-post.component'

@@ -10,7 +10,7 @@ import { ShareButton, ShareProvider } from 'ng2-sharebuttons';
 })
 
 export class ShowPostComponent{
-     post = [];
+    post = [];
     comments = []
     facebookButton;
     twitterButton;

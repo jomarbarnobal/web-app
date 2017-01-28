@@ -19,6 +19,8 @@ import { FooterComponent } from './footer'
 // User Compnent
 import { LoginComponent } from './user-login'
 import { RegisterComponent } from './user-register'
+// new post component
+import { NewPostComponent } from './new-post'
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { RegisterComponent } from './user-register'
     FooterComponent,
     LoginComponent,
     RegisterComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
