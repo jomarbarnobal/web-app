@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterializeModule } from 'angular2-materialize';
 import { DashBoardComponent } from './dashboard.component';
-import { DashboardSideNavComponent } from './dashboard-sidenav';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -13,11 +12,9 @@ import { RouterModule } from '@angular/router';
   ],
   declarations: [
     DashBoardComponent,
-    DashboardSideNavComponent
   ],
   exports: [
     DashBoardComponent,
-    DashboardSideNavComponent
   ]
 })
 
