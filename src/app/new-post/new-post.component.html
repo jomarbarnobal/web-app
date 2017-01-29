@@ -1,10 +1,14 @@
 <div class="container">
-  {{ _currentId }}
   <h1>Create New Post</h1>
   <form #form="ngForm" 
     class="col s12" 
     novalidate 
-    (submit)="submitPost(form.user_id)">
+    (submit)="submitPost(form)">
+    <div class="row">
+      <div class="input-field col s12">
+         <input name="user_id" value="{{ _tokenService.currentUserData?.id }}" (ngModel)="user.value">
+      </div>
+    </div>
     <div class="row">
       <div class="input-field col s12">
         <input id="title" 
@@ -39,5 +43,4 @@
   Model: {{ _postData | json }}
   <br>
   Angular: {{ form.value | json}}
-  {{ form.pristine}}
 </div>

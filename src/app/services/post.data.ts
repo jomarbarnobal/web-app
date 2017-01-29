@@ -1,5 +1,5 @@
+import { UserData } from 'angular2-token'
 export interface PostData {
-   id: number;
    user_id: number;
    image: string;
    title: string
