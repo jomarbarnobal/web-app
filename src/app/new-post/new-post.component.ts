@@ -10,8 +10,8 @@ import { PostData, PosTService, ApiService } from '../services'
   providers: [ PosTService, ApiService ]
 })
 
-export class NewPostComponent implements OnInit{
-  private user_id: number;
+export class NewPostComponent{
+  private _currentId: number;
   private _postData: PostData = <PostData>{};
  
   constructor(
@@ -25,16 +25,14 @@ export class NewPostComponent implements OnInit{
   
   
   submitPost(form: NgForm){
-      this._createPost.createPost(this._postData).subscribe(
-        err => console.log(err)
-      )
+    this._createPost.createPost(this._postData).subscribe(
+      res => console.log(res),
+      error => console.log(error),
+    )
+    
   }
 
-  ngOnInit(){
-    // this.userSignedIn();
+  private _curentUser(id: number){
+    this._tokenService.currentUserData.id
   }
-
-  // userSignedIn(){
-  //   this.user_id = this._tokenService.currentUserData.id
-  // }
 }
