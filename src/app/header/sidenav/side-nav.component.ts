@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router'
 import { Angular2TokenService } from 'angular2-token';
 
@@ -9,6 +9,7 @@ import { Angular2TokenService } from 'angular2-token';
 })
 
 export class SideNavComponent {
+    @Input() userid;
      constructor(
          private _tokenService: Angular2TokenService,
          private _router: Router){

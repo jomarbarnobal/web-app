@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
+import { ActivatedRoute, Params } from '@angular/router'
 import { NgForm } from '@angular/forms';
 import { PostData, PosTService, ApiService } from '../services'
 
@@ -10,31 +11,30 @@ import { PostData, PosTService, ApiService } from '../services'
   providers: [ PosTService, ApiService ]
 })
 
-export class NewPostComponent implements OnInit{
-  private user_id: number;
+export class NewPostComponent implements OnInit {
+  // email: string;
+  // userId;
+
   private _postData: PostData = <PostData>{};
- 
+  
   constructor(
     private _tokenService: Angular2TokenService,
-    private _createPost: PosTService
+    private _createPost: PosTService,
+    private router: ActivatedRoute
     ){
     this._tokenService.init({
         apiBase: 'https://blog-api-app.herokuapp.com'
     })
-  }
+   }
   
   
   submitPost(form: NgForm){
-      this._createPost.createPost(this._postData).subscribe(
-        err => console.log(err)
+      this._createPost.post(form.value).subscribe(
+        error => console.log(error)
       )
   }
-
+  
   ngOnInit(){
-    // this.userSignedIn();
+    // this.userId = this._tokenService.currentUserData.email;
   }
-
-  // userSignedIn(){
-  //   this.user_id = this._tokenService.currentUserData.id
-  // }
 }

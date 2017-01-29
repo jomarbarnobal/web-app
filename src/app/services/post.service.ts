@@ -19,8 +19,7 @@ export class PosTService{
     return this._postsService.get(`${this.path}/${id}`)
   }
 
-  createPost(post: PostData): Observable<any>{
+  post(post: PostData): Observable<any>{
     return this._postsService.post(this.path, post)
   }
-
 }
