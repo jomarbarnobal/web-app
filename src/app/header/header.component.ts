@@ -13,7 +13,8 @@ export class HeaderComponent{
         private _router: Router,
         private _tokenService: Angular2TokenService){
         this._tokenService.init({
-            apiBase: 'https://blog-api-app.herokuapp.com'
+            // apiBase: 'https://blog-api-app.herokuapp.com'
+               apiBase: 'http://localhost:3000'
         })
     }
 

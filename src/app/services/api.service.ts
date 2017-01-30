@@ -11,8 +11,8 @@ export class ApiService{
     'Accept':       'application/json'
   })
 
-  private _baseUrl: string = 'https://blog-api-app.herokuapp.com'
-  // private _baseUrl: string = 'http://localhost:3000'
+  // private _baseUrl: string = 'https://blog-api-app.herokuapp.com'
+  private _baseUrl: string = 'http://localhost:3000'
   
   constructor(private _http: Http){}
   

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { PosTService, ApiService } from '../../services';
 import { ShareButton, ShareProvider } from 'ng2-sharebuttons';
+import { Observable } from 'rxjs/Rx';
+
 
 @Component({
   templateUrl: './show.component.html',
@@ -10,8 +12,8 @@ import { ShareButton, ShareProvider } from 'ng2-sharebuttons';
 })
 
 export class ShowPostComponent{
-    post = [];
-    comments = []
+    post = []; 
+    comments = [];
     facebookButton;
     twitterButton;
     description = [];
@@ -31,8 +33,8 @@ export class ShowPostComponent{
 
         this._postService.getPost(this.id)
         .subscribe(
-            post => this.post = post,
-            comment => this.comments = comment
+            res => this.post = res,
+            error => this.comments = error
         )
 
         this.facebookButton = new ShareButton(
