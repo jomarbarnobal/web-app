@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
 import { ActivatedRoute, Params } from '@angular/router'
@@ -11,10 +12,7 @@ import { PostData, PosTService, ApiService } from '../services'
   providers: [ PosTService, ApiService ]
 })
 
-export class NewPostComponent {
-  // email: string;
-  // userId;
-
+export class NewPostComponent{
   private _postData: PostData = <PostData>{};
   
   constructor(

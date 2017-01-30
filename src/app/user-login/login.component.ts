@@ -25,6 +25,7 @@ export class LoginComponent{
     this._tokenService.init({
       // apiBase: 'https://blog-api-app.herokuapp.com'
      apiBase: 'http://localhost:3000'
+
     })
 
     this._formService.submit$.subscribe(
