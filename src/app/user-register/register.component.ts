@@ -21,7 +21,7 @@ export class RegisterComponent {
   ){
     this._formService.initForm(SIGN_UP_FORM);
     this._tokenService.init({
-      apiBase: 'https://blog-api-app.herokuapp.com'
+      apiBase: 'http://localhost:3000'
     })
     this._formService.submit$.subscribe(
       (data: RegisterData ) => this._tokenService.registerAccount(data)

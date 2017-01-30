@@ -14,7 +14,7 @@ export class SideNavComponent {
          private _tokenService: Angular2TokenService,
          private _router: Router){
         this._tokenService.init({
-            apiBase: 'https://blog-api-app.herokuapp.com'
+            apiBase: 'http://localhost:3000'
         })
     }
 
