@@ -11,8 +11,7 @@ import { HomeComponent } from './home.component';
 import { BannerComponent } from './banner';
 import { PostsComponent } from './posts';
 import { ShowPostComponent } from './show-post'; 
-import { CommentComponent } from './comment'
-
+import { CommentCardComponent } from './comment'
 
 @NgModule({
     imports: [
@@ -28,14 +27,15 @@ import { CommentComponent } from './comment'
         BannerComponent,
         PostsComponent,
         ShowPostComponent,
-        CommentComponent
+        CommentCardComponent,
+
     ],
     exports: [
         HomeComponent,
         BannerComponent,
         PostsComponent,
         ShowPostComponent,
-        CommentComponent
+        CommentCardComponent,
     ]
 })
 

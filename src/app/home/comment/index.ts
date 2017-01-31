@@ -1,1 +1,1 @@
-export { CommentComponent } from './comment.component'
+export { CommentCardComponent } from './comment-card.component'
