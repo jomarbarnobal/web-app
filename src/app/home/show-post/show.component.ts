@@ -35,14 +35,6 @@ export class ShowPostComponent{
         })
     }
 
-    onComment(){
-        this._commentService.post('v1/posts/' + this.id + '/comments', this._comment)
-            .subscribe(
-                error => console.log(error),
-                resp => console.log(resp)
-        )
-    }
-
     ngOnInit(){
         this.sub = this._route.params.subscribe(params => {
             this.id = +params['id'];
@@ -65,6 +57,14 @@ export class ShowPostComponent{
            "<span><i class='fa fa-twitter'></i></span>", //set button template
            'twitter'                           //set button classes
         );
+    }
+
+    onComment(){
+        this._commentService.post('v1/posts/' + this.id + '/comments', this._comment)
+            .subscribe(
+                error => console.log(error),
+                resp => console.log(resp)
+        )
     }
 
 }

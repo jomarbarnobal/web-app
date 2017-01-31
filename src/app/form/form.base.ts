@@ -74,3 +74,15 @@ export const SIGN_UP_FORM: FormBase[] = [
             ]
     }), 
 ]
+
+export const COMMENT_FORM: FormBase[] = [
+    new FormBase({
+        key: 'comment',
+        label: 'Comment',
+        type: 'text-area',
+        validators: [
+            Validators.required,
+            Validators.minLength(20)
+        ]
+    })
+]
