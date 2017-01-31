@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 import { MaterializeModule } from 'angular2-materialize';
 import { MomentModule } from 'angular2-moment';
 import { RouterModule } from '@angular/router'
@@ -12,13 +13,15 @@ import { PostsComponent } from './posts';
 import { ShowPostComponent } from './show-post'; 
 import { CommentComponent } from './comment'
 
+
 @NgModule({
     imports: [
         MaterializeModule,
         MomentModule,
         RouterModule,
         ShareButtonsModule,
-        BrowserModule
+        BrowserModule,
+        FormsModule
     ],
     declarations:[
         HomeComponent,

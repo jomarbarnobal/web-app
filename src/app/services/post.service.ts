@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PostData } from './post.data'
+import { PostData } from './app.data'
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs/Rx';
 
@@ -19,7 +19,7 @@ export class PosTService{
     return this._postsService.get(`${this.path}/${id}`)
   }
 
-  post(post: PostData): Observable<any>{
-    return this._postsService.post(this.path, post)
-  }
+  // post(post: PostData): Observable<any>{
+  //   return this._postsService.post(this.path, post)
+  // }
 }

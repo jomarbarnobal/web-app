@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { PosTService, ApiService } from '../../services';
 import { ShareButton, ShareProvider } from 'ng2-sharebuttons';
 import { Observable } from 'rxjs/Rx';
+import { CommentData } from '../../services';
+import { Angular2TokenService } from 'angular2-token';
 
 
 @Component({
@@ -12,19 +14,34 @@ import { Observable } from 'rxjs/Rx';
 })
 
 export class ShowPostComponent{
+    private _comment: CommentData = <CommentData>{};
     post = []; 
     comments = [];
     facebookButton;
     twitterButton;
+    comment;
     description = [];
     id: number;
-
+    
     private sub: any;
-
+    
     constructor(
         private _route: ActivatedRoute,
-        private _postService: PosTService
-    ){}
+        private _postService: PosTService,
+        private _commentService: Angular2TokenService
+    ){
+        this._commentService.init({
+            apiBase: 'http://localhost:3000' 
+        })
+    }
+
+    onComment(){
+        this._commentService.post('v1/posts/' + this.id + '/comments', this._comment)
+            .subscribe(
+                error => console.log(error),
+                resp => console.log(resp)
+        )
+    }
 
     ngOnInit(){
         this.sub = this._route.params.subscribe(params => {
@@ -39,14 +56,14 @@ export class ShowPostComponent{
 
         this.facebookButton = new ShareButton(
         ShareProvider.FACEBOOK,              //choose the button from ShareProvider
-        "<span><i class='fa fa-facebook'></i></span>", //set button template
-        'facebook'                           //set button classes
+            "<span><i class='fa fa-facebook'></i></span>", //set button template
+            'facebook'                           //set button classes
       );
 
-        this.twitterButton = new ShareButton(
-            ShareProvider.TWITTER,              //choose the button from ShareProvider
-            "<span><i class='fa fa-twitter'></i></span>", //set button template
-            'twitter'                           //set button classes
+       this.twitterButton = new ShareButton(
+          ShareProvider.TWITTER,              //choose the button from ShareProvider
+           "<span><i class='fa fa-twitter'></i></span>", //set button template
+           'twitter'                           //set button classes
         );
     }
 

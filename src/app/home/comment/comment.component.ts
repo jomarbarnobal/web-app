@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'comment-section',
   templateUrl: './comment.component.html',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
 })
 
 export class CommentComponent {
+  
 
 }
