@@ -1,0 +1,43 @@
+<div class="comments-wrapper">
+  <div class="card"
+      *ngIf="_commentService.currentUserData != null"
+      >
+    <form #comment="ngForm" 
+          class="col s12 m12"
+           
+          novalidate>
+      <div class="row">
+        <div class="input-field col s12"
+        >
+          <i class="material-icons prefix fa fa-comments"></i>
+          <textarea id="icon_prefix2" 
+                    class="materialize-textarea"
+                    name="body"
+                    required
+                    [(ngModel)]="_comment.body">
+          </textarea>
+          <label for="icon_prefix2">Message</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <button type="submit" 
+                [disabled]="comment.invalid" 
+                class="btn"
+                (click)="onComment()">
+                Comment
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="card"
+    *ngIf="!_commentService.currentUserData"
+    >
+    <p class="light">
+      Login to comment...
+    <i class="fa fa-comment-o" aria-hidden="true"></i>
+    </p>
+  </div>
+</div>
+
+

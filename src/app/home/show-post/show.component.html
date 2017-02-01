@@ -38,37 +38,17 @@
     </div>
   </div>
   <div class="comment-wrapper">
-<!-- comment form -->
-    <div class="comments-wrapper">
-      <div class="card">
-        <form #comment="ngForm" class="col s12 m12" novalidate>
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="material-icons prefix fa fa-comments"></i>
-              <textarea id="icon_prefix2" 
-                        class="materialize-textarea"
-                        name="body"
-                        required
-                        [(ngModel)]="_comment.body">
-              </textarea>
-              <label for="icon_prefix2">Message</label>
-            </div>
-          </div>
-          <div class="row">
-            <button type="submit" 
-                    [disabled]="comment.invalid" 
-                    class="btn"
-                    (click)="onComment()">
-                    Comment
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-<!-- itirate all comments here -->
-<comment-card 
-  [comment]="comment"
-  *ngFor="let comment of post.comments"
+  <!-- comment form -->
+  <comment-form 
+  [postId]="id"
+  (createComment)="commentCreated($event)"
   >
-</comment-card>
+  </comment-form>
+  <!-- itirate all comments here -->
+    <comment-card 
+      [comment]="comment"
+      *ngFor="let comment of post.comments"
+      >
+    </comment-card>
+  </div>
+</div>

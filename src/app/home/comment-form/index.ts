@@ -1,0 +1,1 @@
+export { CommentFormComponent } from './comment-f.component'

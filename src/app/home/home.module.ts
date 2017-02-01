@@ -12,6 +12,7 @@ import { BannerComponent } from './banner';
 import { PostsComponent } from './posts';
 import { ShowPostComponent } from './show-post'; 
 import { CommentCardComponent } from './comment'
+import { CommentFormComponent } from './comment-form'
 
 @NgModule({
     imports: [
@@ -28,7 +29,7 @@ import { CommentCardComponent } from './comment'
         PostsComponent,
         ShowPostComponent,
         CommentCardComponent,
-
+        CommentFormComponent
     ],
     exports: [
         HomeComponent,
@@ -36,6 +37,7 @@ import { CommentCardComponent } from './comment'
         PostsComponent,
         ShowPostComponent,
         CommentCardComponent,
+        CommentFormComponent
     ]
 })
 

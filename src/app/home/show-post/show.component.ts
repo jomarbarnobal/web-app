@@ -19,7 +19,7 @@ export class ShowPostComponent{
     comments = [];
     facebookButton;
     twitterButton;
-    comment;
+    // comment;
     description = [];
     id: number;
     
@@ -65,6 +65,10 @@ export class ShowPostComponent{
                 error => console.log(error),
                 resp => console.log(resp)
         )
+    }
+
+    commentCreated(comment) {
+        this.comments.push(comment);
     }
 
 }
