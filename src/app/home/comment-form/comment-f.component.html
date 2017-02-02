@@ -2,9 +2,9 @@
   <div class="card"
       *ngIf="_commentService.currentUserData != null"
       >
-    <form #comment="ngForm" 
+    <form #form="ngForm"
           class="col s12 m12"
-           
+          (submit)="onComment()"
           novalidate>
       <div class="row">
         <div class="input-field col s12"
@@ -14,7 +14,7 @@
                     class="materialize-textarea"
                     name="body"
                     required
-                    [(ngModel)]="_comment.body">
+                    [(ngModel)]="newComment.body">
           </textarea>
           <label for="icon_prefix2">Message</label>
         </div>
@@ -22,9 +22,8 @@
       
       <div class="row">
         <button type="submit" 
-                [disabled]="comment.invalid" 
                 class="btn"
-                (click)="onComment()">
+                [disabled]="form.invalid">
                 Comment
         </button>
       </div>

@@ -1,7 +1,7 @@
 <div class="post-page">
   <div class="post-wrapper">
     <div class="post-inner">
-  <!-- post with user profile -->  
+    
       <div class="post-profile-image">
         <img src="assets/images/yuna.jpg" alt="" class="circle">
       </div>
@@ -9,11 +9,11 @@
         <span class="light email-name"> {{ post?.user?.email}}</span><br>
         <span class="time light">{{ post.created_at | amTimeAgo }} </span>
       </div>
-    <!-- post body -->
+  
       <div class="post-title">
         <h3 class="grey-text text-darken-4">{{ post.title }} </h3>
       </div>
-    <!-- comment body -->
+  
       <div class="post-body">
         <p class="flow-text">{{ post.body }} </p>
       </div>
@@ -37,18 +37,22 @@
       </div>
     </div>
   </div>
+  
+
   <div class="comment-wrapper">
-  <!-- comment form -->
+  
   <comment-form 
   [postId]="id"
-  (createComment)="commentCreated($event)"
+  (createComment)="onCreateComment($event)"
   >
   </comment-form>
-  <!-- itirate all comments here -->
+  
     <comment-card 
       [comment]="comment"
       *ngFor="let comment of post.comments"
       >
     </comment-card>
   </div>
+  
 </div>
+

@@ -10,7 +10,7 @@ import { NewPostComponent } from './new-post'
 
 const _route: Routes = [
   { path: '', component: HomeComponent},
-  {path: 'post/:id', component: ShowPostComponent},
+  {path: 'post/:id', component: ShowPostComponent, canActivate: [Angular2TokenService]},
   { path: 'user/sign-in', component: LoginComponent },
   { path: 'user/sign-up', component: RegisterComponent },
   { path: 'dashboard/user/:id', component: DashBoardComponent, canActivate: [ Angular2TokenService ]},
