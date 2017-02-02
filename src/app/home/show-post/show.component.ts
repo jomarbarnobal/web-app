@@ -15,6 +15,7 @@ import { Angular2TokenService } from 'angular2-token';
 })
 
 export class ShowPostComponent implements OnInit{
+    message;
     post = [];
     comments = []
     facebookButton;
@@ -25,9 +26,8 @@ export class ShowPostComponent implements OnInit{
         private _postService: PosTService){}
 
 
-    onCreateComment(_comment){
-        this.comments.push(_comment)
-        console.log('hi');
+    notifyClick(e){
+        alert("i am yelling")
     }
 
     ngOnInit(){
@@ -52,7 +52,6 @@ export class ShowPostComponent implements OnInit{
            'twitter'                           //set button classes
        );
     }
-
 }
 
 

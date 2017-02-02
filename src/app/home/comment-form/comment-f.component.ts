@@ -30,12 +30,15 @@ export class CommentFormComponent{
     }
 
   onComment(){
-    this._commentService.post('v1/posts/' + this.postId + '/comments', this.newComment)
-      .subscribe(
-        res => console.log(res),
-        err => console.log(err)
-      )
-      this.reset();
+    // this._commentService.post('v1/posts/' + this.postId + '/comments', this.newComment)
+    //   .subscribe(
+    //     res => console.log(res),
+    //     err => console.log(err)
+    //   )
+    // this.reset();
+  }
+  onclick(){
+    this.createComment.emit()
   }
   reset(){
     this.newComment.body = '';
