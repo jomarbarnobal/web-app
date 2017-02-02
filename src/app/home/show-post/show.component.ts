@@ -14,13 +14,12 @@ import { Angular2TokenService } from 'angular2-token';
 })
 
 export class ShowPostComponent{
-    private _comment: CommentData = <CommentData>{};
     post = []; 
     comments = [];
+    description = [];
     facebookButton;
     twitterButton;
-    // comment;
-    description = [];
+    
     id: number;
     
     private sub: any;
@@ -58,17 +57,4 @@ export class ShowPostComponent{
            'twitter'                           //set button classes
         );
     }
-
-    onComment(){
-        this._commentService.post('v1/posts/' + this.id + '/comments', this._comment)
-            .subscribe(
-                error => console.log(error),
-                resp => console.log(resp)
-        )
-    }
-
-    commentCreated(comment) {
-        this.comments.push(comment);
-    }
-
 }

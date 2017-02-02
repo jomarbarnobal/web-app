@@ -27,22 +27,8 @@ export class CommentFormComponent{
   onComment(){
     this._commentService.post('v1/posts/' + this.postId + '/comments', this._comment)
         .subscribe(
-          resp => this._successHandle(resp),
+          resp => console.log(resp),
           error => console.log('error', error),
       );
-  
-      if (this._comment) {
-        this.createComment.next(this._comment)
-      };
-  
-      this.reset();
-  }
-
-  private _successHandle(data: any){
-    console.log(data)
-  }
-  
-  reset(){
-    this._comment;
   }
 }
