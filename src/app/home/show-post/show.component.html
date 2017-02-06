@@ -41,18 +41,17 @@
 
   <div class="comment-wrapper">
   
-  <comment-form 
-  [postId]="id"
-  (createComment)="notifyClick($event)"
-  >
-  </comment-form>
-  
+    <comment-form 
+      [postId]="id"
+      (createComment)="commentCreated($event)"
+      >
+    </comment-form>
+
     <comment-card 
       [comment]="comment"
       *ngFor="let comment of post.comments"
       >
     </comment-card>
   </div>
-  
 </div>
 

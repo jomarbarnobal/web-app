@@ -15,11 +15,9 @@ import { ActivatedRoute, Params } from '@angular/router'
 })
 
 export class CommentFormComponent{
-  
   @Output() createComment = new EventEmitter();
   @Input() postId: number;
-
-  newComment: CommentData = <CommentData>{} 
+  newComment: CommentData = <CommentData>{};
 
   constructor(
     private _commentService: Angular2TokenService,
@@ -28,18 +26,20 @@ export class CommentFormComponent{
         apiBase: 'http://localhost:3000'
       })
     }
-
-  onComment(){
-    this._commentService.post('v1/posts/' + this.postId + '/comments', this.newComment)
-      .subscribe(
-        res => console.log(res),
-        err => console.log(err)
-      )
+  
+  onComment(comment){
+    this.createComment.next(this.newComment)
     this.reset();
   }
-  onclick(){
-    this.createComment.emit()
-  }
+  // onComment(comment){
+  // this._commentService.post('v1/posts/' + this.postId + '/comments', this.newComment)
+  //   .subscribe(
+  //     res => console.log(res),
+  //     err => console.log(err)
+  //   )
+  //   this.reset();
+  // }
+
   reset(){
     this.newComment.body = '';
   }

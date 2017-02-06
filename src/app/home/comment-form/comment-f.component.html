@@ -4,7 +4,7 @@
       >
     <form #form="ngForm"
           class="col s12 m12"
-          (submit)="onComment()"
+          (ngSubmit)="onComment()"
           novalidate>
       <div class="row">
         <div class="input-field col s12"
@@ -30,7 +30,7 @@
     </form>
     <div class="test">
       <button class="btn"
-      (click)="onclick()"
+      (click)="onComment()"
       >test output btn </button>
     </div>
   </div>
